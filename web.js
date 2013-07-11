@@ -4,7 +4,9 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 //  response.send('Hello World2!');
-    response.send(getIndexData());
+    var string = getIndexData();
+//    console.info(string);
+    response.send(string);
 });
 
 var port = process.env.PORT || 5000;
@@ -17,6 +19,6 @@ var getIndexData = function() {
 //    console.log(data);
 //    console.log(data.length);
     var ds = data.toString("utf-8", 0, data.length-1);
-    console.info(ds);
+//    console.info(ds);
     return ds;
-}
+};
